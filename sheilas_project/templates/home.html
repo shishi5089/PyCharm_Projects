@@ -1,0 +1,48 @@
+{% extends('master.html') %}
+
+{% block content %}
+    <h2 class="text-center">Welcome...we are glad to have you</h2>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img  class="lol"src="http://www.wellesleynatickveterinaryhospital.com/images/puppies-and-kittens.jpg" alt="" width="1150px" height="600px">
+    </div>
+    <div class="carousel-item">
+      <img class="lol" src="http://www.oneofakindpets.com/site/wp-content/uploads/2017/06/SITE_IMAGES_750X450_LRG_Save.jpg" alt=""  width="1150px" height="600px">
+    </div>
+    <div class="carousel-item">
+      <img class="lol" src="https://www.springhappenings.com/sh_content/uploads/2018/09/montgomerycountyanimalshelter.png" alt=""  width="1150px" height="600px">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+{#        <img class="lol" src="http://www.wellesleynatickveterinaryhospital.com/images/puppies-and-kittens.jpg" alt="" width="1150px" height="600px">#}
+
+
+
+    <h4 >MyDogCat Animal Centre</h4>
+        <p class="lee">This is a simple institution that takes care of homeless, needy, sick and abandoned dogs and cats all over the city. It is with love and joy that we take care of these animals just as we do humans.
+            <br>It is our job to simply enable these animals to live a happy and joyful life. We encourage their adoption as they are in need of loving homes in order to express themsleves.
+            <br>Feel free to explore our site and find a pet you are willing to love and protect.</p>
+    <a class="zed" href="/dogs">Click here to view our precious dogs</a><br>
+    <a class="zed" href="/cats">Click here to view our precious cats</a>
+
+
+{% endblock %}

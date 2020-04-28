@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyDogCat Animal Centre</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+    {% block extras %}
+
+    {% endblock %}
+
+    <style>
+        body {
+            background: beige;
+        }
+
+        .bg-info {
+            background-color: #7a6634 !important;
+        }
+
+        a {
+            text-decoration: darkslategray;
+            text-shadow: 3px 3px black;
+            font-family: "Forte";
+            font-size: 30px !important;
+        }
+
+        .navbar-dark .navbar-brand {
+            color: #fbf5f2e3 !important;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #a9a483 !important;
+            font-size: 20px !important;
+            text-shadow: 1px 1px black;
+            padding-left: 30px;
+        }
+
+        .navbar-expand-md .navbar-nav .nav-link {
+            padding-right: .7rem;
+            padding-left: .7rem;
+        }
+
+        h2 {
+            font-family: "Segoe Print";
+            font-style: revert;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .img-fluid {
+            height: 320px;
+            width: 400px;
+            border-style: dotted;
+            border-color: burlywood;
+            alignment: center !important;
+        }
+
+        .zed {
+            text-shadow: 1px 1px black;
+            color: #a9a483 !important;
+            padding-left: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: "Segoe Print";
+            color: #4c4b45;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            text-align: center;
+            text-shadow: 1px 1px black;
+        }
+
+        p.lol {
+            text-align: revert;
+            font-family: "Cooper Black";
+            font-style: inherit;
+            color: #4c4b45;
+            padding-top: 10px;
+        }
+
+        img.lol {
+            padding-left: 230px;
+
+        {#border-style: dotted;#}{#border-color: burlywood;#}
+        }
+
+        h4 {
+            font-family: "Segoe Print";
+            color: #4c4b45;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            text-align: center;
+            text-shadow: 1px 1px black;
+        }
+
+        p.lee {
+            text-align: revert;
+            font-family: "Cooper Black";
+            font-style: inherit;
+            color: #4c4b45;
+            padding-top: 10px;
+            padding-left: 30px;
+
+        }
+
+        .dropdown-item {
+            color: #fbf5f2e3 !important;
+            text-shadow: 1px 1px black;
+            font-size: 20px !important;
+
+        }
+        .btn-danger{
+            background-color: #7a272b;
+            font-weight: 400;
+            border-color: #7a272b;
+            text-shadow: 1px 1px black;
+        }
+        .btn-primary{
+            background-color: #7a272b!important;
+            border-color: #7a272b!important;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-info navbar-dark justify-content-center">
+    <!-- Brand -->
+    <img src="https://i.ytimg.com/vi/dmZMDzx10IM/maxresdefault.jpg" class="rounded" width="100px" alt="">
+    <a class="navbar-brand" href="#">MyDogCat Animal Centre</a>
+
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            {% if session.get('id') %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/animals">Animals We Have</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/add_pet">New pet</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">Want to know more</a>
+
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="/login">Sign In</a>#}
+{#                </li>#}
+                {#                <li class="nav-item">#}
+                {#                    <a class="nav-link" href="/logout">Log Out</a>#}
+                {#                </li>#}
+
+            {% else %}
+
+                {#                <li class="nav-item">#}
+                {#                    <a class="nav-link" href="/login">Sign In</a>#}
+                {#                </li>#}
+
+            {% endif %}
+{#            <li class="nav-item">#}
+{#                #}
+{#            </li>#}
+
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Want to contact us</a>
+            </li>
+        </ul>
+
+
+        <ul class="navbar-nav ml-auto">
+            {% if session.get('id') %}
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        {{ session.get('user_name') }}
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">{{ session.get('email') }}</a>
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                        <a class="nav-link" href="/add_user">New user</a>
+                        {#                        <a class="dropdown-item" href="#">Link 3</a>#}
+                    </div>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/add_user">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Sign in</a>
+                </li>
+
+
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<div class="row justify=content-center">
+    <div class="col-6">
+        {% with messages = get_flashed_messages(with_categories = true) %}
+            {% if messages %}
+                {% for category,message in messages %}
+                    <p class="text-center {{ category }}">{{ message }}</p>
+                {% endfor %}
+
+            {% endif %}
+        {% endwith %}
+
+    </div>
+
+</div>
+
+
+
+
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
+
+{#form /add
+name , quantity, price#}

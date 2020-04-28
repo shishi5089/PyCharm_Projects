@@ -1,0 +1,43 @@
+{% extends('master.html') %}
+
+{% block content %}
+    <h2 class="text-center">Add a new pet</h2>
+    <div class="row justify-content-center">
+        <div class="col-5">
+            <form action="/add_pet " method="post">
+                <div class="form-group">
+                    <input type="text" name="animal_name" class="form-control" placeholder="Pet Name">
+
+                </div>
+                <div class="form-group">
+                    <input type="text" name="animal_type" class="form-control" placeholder="Type">
+
+                </div>
+
+                 <div class="form-group">
+                    <input type="text" name="age" class="form-control" placeholder="Age">
+
+                </div>
+                <div class="form-group">
+                    <input type="text" name="gender" class="form-control" placeholder="Gender">
+
+                </div>
+                <div class="form-group">
+                    <input type="text"name="category" class="form-control" placeholder="Category">
+
+                </div>
+                 <div class="form-group">
+                    <input type="number" name="price" class="form-control" placeholder="Price">
+
+                </div>
+
+                <button class="btn btn-primary btn-block">Add Pet</button>
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+{% endblock %}

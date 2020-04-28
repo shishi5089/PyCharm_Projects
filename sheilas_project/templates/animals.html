@@ -1,0 +1,62 @@
+{% extends('master.html') %}
+
+{% block extras %}
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js">
+
+    </script>
+
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">Here are our animals</h2>
+    {#    {% for item in items %}#}
+    {#        <p>{{ item }}</p>#}
+    {#    {% endfor %}#}
+    <div class="container">
+        <table id="animals" class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>ANIMAL NAME</th>
+                <th>ANIMAL TYPE</th>
+                <th>AGE</th>
+                <th>GENDER</th>
+                <th>CATEGORY</th>
+                <th>PRICE</th>
+                <th>STATUS</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for animal in animals %}
+                <tr>
+                    <td>{{ animal[0] }}</td>
+                    <td>{{ animal[1] }}</td>
+                    <td>{{ animal[2] }}</td>
+                    <td>{{ animal[3] }}</td>
+                    <td>{{ animal[4] }}</td>
+                    <td>{{ animal[5] }}</td>
+                    <td>{{ animal[6] }}</td>
+                    <td></td>
+                    <td><a href="/status/{{ animal[0] }}" class="btn btn-danger">Purchased</a></td>
+                </tr>
+
+            {% endfor %}
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script>
+{#checks if document has loaded#}
+        $(document).ready(function () {
+            $('#animals').DataTable();
+        });
+    </script>
+
+
+{% endblock %}
